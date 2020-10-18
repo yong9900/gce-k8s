@@ -9,12 +9,12 @@ scripts:
     - docker run -e CI=true mzhao/react-test yarn test    
 
 after_success:    
-    - docker build -t mzhao/multi-client ./client
-    - docker build -t mzhao/multi-nginx ./nginx
-    - docker build -t mzhao/multi-server ./server
-    - docker build -t mzhao/multi-worker ./worker
+    - docker build -t yong9900/multi-client ./client
+    - docker build -t yong9900/multi-nginx ./nginx
+    - docker build -t yong9900/multi-server ./server
+    - docker build -t yong9900/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" |docker login -u "$DOCKER_ID" --password-stdin
-    - docker push mzhao/multi-client
-    - docker push mzhao/multi-nginx
-    - docker push mzhao/multi-server
-    - docker push mzhao/multi-worker
+    - docker push yong9900/multi-client
+    - docker push yong9900/multi-nginx
+    - docker push yong9900/multi-server
+    - docker push yong9900/multi-worker
