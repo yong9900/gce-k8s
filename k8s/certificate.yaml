@@ -11,11 +11,11 @@ spec:
     dnsNames:
         - theisfrommikezhao.site
         - www.theisfrommikezhao.site
-    acme:
-        config:
-            - http01:
-                ingressClass: nginx
-            domains:
-                - theisfrommikezhao.site
-                - www.theisfrommikezhao.site
+    # acme:
+    #     config:
+    #         - http01:
+    #             ingressClass: nginx
+    #         domains:
+    #             - theisfrommikezhao.site
+    #             - www.theisfrommikezhao.site
         
