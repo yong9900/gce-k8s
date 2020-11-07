@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: 'nginx'
     nginx.ingress.kubernetes.io/use-regex: 'true'
     # ADD THIS LINE ABOVE
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
     # UPDATE THIS LINE ABOVE
     certmanager.io/cluster-issuer: 'letsencrypt-prod'
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
@@ -21,12 +21,12 @@ spec:
     - host: theisfrommikezhao.site
       http:
         paths:
-          - path: /?(.*)
+          - path: /
           # UPDATE THIS LINE ABOVE
             backend:
               serviceName: client-cluster-ip-service
               servicePort: 3000
-          - path: /api/?(.*)
+          - path: /api/
           # UPDATE THIS LINE ABOVE
             backend:
               serviceName: server-cluster-ip-service
@@ -34,12 +34,12 @@ spec:
     - host: www.theisfrommikezhao.site
       http:
         paths:
-          - path: /?(.*)
+          - path: /
             # UPDATE THIS LINE ABOVE
             backend:
                 serviceName: client-cluster-ip-service
                 servicePort: 3000
-          - path: /api/?(.*)
+          - path: /api/
             # UPDATE THIS LINE ABOVE
             backend:
                 serviceName: server-cluster-ip-service
