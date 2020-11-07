@@ -12,5 +12,5 @@ docker push yong9900/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=yong9900/multi-server:$SHA
-kubectl set image deployments/client-deployment server=yong9900/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=yong9900/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=yong9900/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=yong9900/multi-worker:$SHA
